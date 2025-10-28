@@ -9,7 +9,7 @@ Please read carefully before proceeding.
 
 This repository contains **Web Development tasks** at three difficulty levels:
 
-### 🧩 Novice Level
+### 🧩 Beginner Level
 For those new to web development — covers basic **HTML**, **CSS**, and **JavaScript** concepts.
 
 ### ⚙️ Intermediate Level
@@ -32,7 +32,7 @@ Each level includes tasks in three core web domains:
 
 ## 🛠️ Getting Started
 
-1. **Choose your level** → Navigate to `Novice/`, `Intermediate/`, or `Pro/`  
+1. **Choose your level** → Navigate to `Beginner/`, `Intermediate/`, or `Pro/`  
 2. **Select a domain** → Choose **Frontend**, **Backend**, or **Full Stack**  
 3. **Read the instructions** → Open the `README.md` and `tasks.md` in your chosen folder  
 4. **Complete the tasks** → Use the provided `starter` project folder and complete **ANY ONE task** (or more if you want a challenge)
@@ -41,7 +41,7 @@ Each level includes tasks in three core web domains:
 ```
 Nile-GDSC-WebDev-Questions-Repo/
 ├── README.md
-├── Novice/
+├── Beginner/
 │   ├── Frontend/
 │   │   ├── README.md
 │   │   ├── tasks.md
@@ -86,7 +86,7 @@ Nile-GDSC-WebDev-Questions-Repo/
 
 ## ⚙️ Requirements
 
-- **Novice** → Basic **HTML**, **CSS**, and **JavaScript**  
+- **Beginner** → Basic **HTML**, **CSS**, and **JavaScript**  
 - **Intermediate** → Familiarity with **React**, **Node.js**, or **basic APIs**  
 - **Pro** → Full-stack experience, **version control**, and **deployment** (Netlify, Vercel, Render, etc.)
 
