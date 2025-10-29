@@ -75,6 +75,24 @@ Your submission will be evaluated based on the following criteria:
 - Check out free learning resources like [MDN Web Docs](https://developer.mozilla.org/) or [FreeCodeCamp](https://www.freecodecamp.org/).
 
 ---
+## 📺 Helpful Tutorials
+
+<!-- [![Video Title](https://img.youtube.com/vi/HD13eq_Pmp8/hqdefault.jpg)](https://www.youtube.com/watch?v=HD13eq_Pmp8)
+[![Video Title](https://img.youtube.com/vi/wRNinF7YQqQ/hqdefault.jpg)](https://www.youtube.com/watch?v=wRNinF7YQqQ)
+[![Video Title](https://img.youtube.com/vi/n9yI6fjkrfE/hqdefault.jpg)](https://www.youtube.com/watch?v=n9yI6fjkrfE)
+[![Video Title](https://img.youtube.com/vi/PkZNo7MFNFg/hqdefault.jpg)](https://www.youtube.com/watch?v=PkZNo7MFNFg) -->
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+  <iframe width="100%" height="315" src="https://www.youtube.com/embed/HD13eq_Pmp8" frameborder="0" allowfullscreen></iframe>
+  <iframe width="100%" height="315" src="https://www.youtube.com/embed/wRNinF7YQqQ" frameborder="0" allowfullscreen></iframe>
+  <iframe width="100%" height="315" src="https://www.youtube.com/embed/n9yI6fjkrfE" frameborder="0" allowfullscreen></iframe>
+  <iframe width="100%" height="315" src="https://www.youtube.com/embed/PkZNo7MFNFg" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+
+
+---
 
 ## ✨ Final Note
 
