@@ -1,0 +1,272 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #d4af37;
+  --secondary-color: #b8860b;
+  --error-color: #ea4335;
+  --warning-color: #fbbc04;
+  --bg-color: #f8f6f0;
+  --card-bg: #ffffff;
+  --text-dark: #2c2416;
+  --text-light: #6b5d47;
+  --border-color: #e5d9c0;
+  --shadow: 0 1px 3px rgba(212, 175, 55, 0.15), 0 1px 2px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 4px 8px rgba(212, 175, 55, 0.25), 0 2px 4px rgba(0, 0, 0, 0.12);
+  --gold-gradient: linear-gradient(135deg, #d4af37 0%, #f4e5a8 50%, #d4af37 100%);
+  --accent-gold: #ffd700;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f8f6f0 0%, #fffef7 50%, #f8f6f0 100%);
+  min-height: 100vh;
+  padding: 20px;
+  color: var(--text-dark);
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  color: var(--text-dark);
+  margin-bottom: 40px;
+  padding: 20px;
+  background: var(--gold-gradient);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-shadow: none;
+}
+
+header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+main {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
+  border: 2px solid var(--border-color);
+}
+
+.form-card {
+  margin-bottom: 40px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+}
+
+.required {
+  color: var(--error-color);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background: #fafafa;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.error-message {
+  display: block;
+  color: var(--error-color);
+  font-size: 0.85rem;
+  margin-top: 5px;
+  min-height: 18px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px 24px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+}
+
+.submit-btn:hover {
+  background: #b8860b;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+.submit-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.loader {
+  display: none;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.submit-btn.loading .loader {
+  display: block;
+}
+
+.submit-btn.loading .btn-text {
+  display: none;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Dashboard Section */
+.dashboard-section {
+  margin-top: 50px;
+  padding-top: 40px;
+  border-top: 2px solid var(--border-color);
+}
+
+.dashboard-section h2 {
+  margin-bottom: 20px;
+  color: var(--text-dark);
+}
+
+.secondary-btn {
+  padding: 10px 20px;
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.secondary-btn:hover {
+  background: #a0751a;
+  transform: translateY(-2px);
+}
+
+.submissions-list {
+  display: none;
+  margin-top: 20px;
+}
+
+.submissions-list.visible {
+  display: block;
+}
+
+.submission-card {
+  background: var(--bg-color);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.submission-card h3 {
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.submission-card p {
+  color: var(--text-light);
+  margin-bottom: 5px;
+  font-size: 0.95rem;
+}
+
+.submission-card .timestamp {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+footer {
+  text-align: center;
+  color: var(--text-light);
+  padding: 20px;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  main {
+    padding: 25px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.95rem;
+  }
+}
+
+/* Toast Notification Custom Styles */
+.toastify {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+}
