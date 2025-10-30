@@ -1,0 +1,34 @@
+{
+  "name": "@starter/api",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "default": "./src/*.ts"
+    }
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsdown"
+  },
+  "devDependencies": {
+    "@types/express": "catalog:",
+    "tsdown": "catalog:"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@trpc/server": "catalog:",
+    "@trpc/client": "catalog:",
+    "better-auth": "catalog:",
+    "drizzle-orm": "catalog:",
+    "dotenv": "catalog:",
+    "zod": "catalog:",
+    "@starter/auth": "workspace:*",
+    "@starter/db": "workspace:*"
+  }
+}
