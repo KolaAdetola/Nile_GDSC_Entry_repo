@@ -1,3 +1,8 @@
+## Deployed links
+
+- **Frontend** - https://nile-gdsc-entry-repo-ybcb.vercel.app
+- **Backend** - https://nile-gdsc-entry-repo.vercel.app
+
 ## Features
 
 - **TypeScript** - For type safety and improved developer experience
