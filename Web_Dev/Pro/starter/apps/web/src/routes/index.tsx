@@ -27,6 +27,7 @@ import {
 import { email, string, z } from "zod";
 import { useForm } from "@tanstack/react-form";
 import { toast } from "sonner";
+import { authClient } from "@/lib/auth-client";
 
 export const Route = createFileRoute("/")({
   component: HomeComponent,
@@ -34,11 +35,9 @@ export const Route = createFileRoute("/")({
 
 const feedbackSchema = z.object({
   name: string({
-    error: "We have absolutely no idea who you're, please fix that",
-  })
-    .min(2, { error: "That can't be your real name, Try adding more letters" })
-    .max(50, { error: "Are you trying to list your family tree?" }),
-  email: email({ error: "Are you certain this email is correct?" }),
+    error: "We have absolutely no idea who you're, please give us a name",
+  }).max(50, { error: "Are you trying to list your family tree?" }),
+  email: email({ error: "What you typed in is not a valid email" }),
   message: string()
     .min(2, { error: "You can't leave this empty bro" })
     .max(200, {
@@ -47,10 +46,11 @@ const feedbackSchema = z.object({
 });
 
 function HomeComponent() {
+  const { data } = authClient.useSession();
   const form = useForm({
     defaultValues: {
-      name: "",
-      email: "",
+      name: data?.user.name || "",
+      email: data?.user.email || "",
       message: "",
     },
     validators: {
@@ -60,7 +60,6 @@ function HomeComponent() {
       createMutation.mutate({ ...value });
     },
   });
-  // const healthCheck = useQuery(trpc.healthCheck.queryOptions());
   const createMutation = useMutation(
     trpc.feedback.create.mutationOptions({
       onSuccess: () => {
@@ -80,16 +79,7 @@ function HomeComponent() {
       },
     })
   );
-  const handleAddTodo = (e: React.FormEvent) => {
-    e.preventDefault();
-    // if (newTodoText.trim()) {
-    //   createMutation.mutate({ text: newTodoText });
-    // }
-  };
 
-  const handleDeleteTodo = (id: number) => {
-    deleteMutation.mutate({ id });
-  };
   return (
     <div className="h-full w-full flex items-center justify-center">
       <Card className="w-full sm:max-w-md">

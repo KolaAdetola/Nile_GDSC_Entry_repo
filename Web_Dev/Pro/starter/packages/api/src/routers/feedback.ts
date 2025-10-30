@@ -12,9 +12,9 @@ export const feedbackRouter = router({
   create: publicProcedure
     .input(
       z.object({
-        name: z.string().min(1),
-        email: z.email(),
-        message: z.string().min(1),
+        name: z.string({ error: "Name is required" }).min(1),
+        email: z.email({ error: "Email is required" }),
+        message: z.string({ error: "Message is required" }).min(1),
       })
     )
     .mutation(async ({ input }) => {
