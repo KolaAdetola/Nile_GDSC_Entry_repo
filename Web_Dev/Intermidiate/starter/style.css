@@ -1,5 +1,131 @@
+/* General */
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin-top: 50px;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f3f3f3;
+  transition: background-color 0.3s;
+}
+
+/* Dark Mode */
+body.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Calculator Container */
+.calculator {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  width: 320px;
+  padding: 1rem;
+  transition: background 0.3s;
+}
+
+body.dark .calculator {
+  background: #1e1e1e;
+}
+
+/* Header */
+.calc-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: red;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.btn-toggle {
+  border: none;
+  background: #ddd;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+body.dark .btn-toggle {
+  background: #333;
+  color: #fff;
+}
+
+/* Display */
+.display {
+  background: #eaeaea;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  min-height: 60px;
+}
+
+body.dark .display {
+  background: #2c2c2c;
+}
+
+.expression {
+  font-size: 1rem;
+  min-height: 1.2rem;
+}
+
+.result {
+  font-size: 1.5rem;
+  text-align: right;
+}
+
+/* Keys Grid */
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.key {
+  padding: 1rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #eaeaea;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.key:active {
+  background: #ccc;
+}
+
+.key.op {
+  background: #ffb74d;
+}
+
+.key.equal {
+  background: #4caf50;
+  color: #fff;
+}
+
+body.dark .key {
+  background: #3a3a3a;
+  color: #fff;
+}
+
+body.dark .key.op {
+  background: #ffa726;
+}
+
+body.dark .key.equal {
+  background: #66bb6a;
 }

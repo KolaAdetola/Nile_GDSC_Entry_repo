@@ -1,14 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Web Challenge</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <h1>Welcome to your Intermediate Web Dev Challenge!</h1>
-    <p>Start your project here.</p>
-    <script src="script.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Responsive Calculator — Nile GDSC</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="calculator">
+    <!-- Header -->
+    <div class="calc-top">
+      <div class="brand">
+        <div class="dot"></div>
+        <div class="title">Reweave Calculator</div>
+      </div>
+      <button id="themeToggle" class="btn-toggle">🌗 Dark</button>
+    </div>
+
+    <!-- Display -->
+    <section class="display">
+      <div id="expression" class="expression"></div>
+      <div id="result" class="result">0</div>
+    </section>
+
+    <!-- Keys -->
+    <section class="keys">
+      <!-- Function Keys -->
+      <button class="key fn" data-action="clear">C</button>
+      <button class="key fn" data-action="delete">⌫</button>
+      <button class="key fn" data-action="percent">%</button>
+      <button class="key op" data-value="/">÷</button>
+
+      <!-- Number Keys -->
+      <button class="key" data-value="7">7</button>
+      <button class="key" data-value="8">8</button>
+      <button class="key" data-value="9">9</button>
+      <button class="key op" data-value="*">×</button>
+
+      <button class="key" data-value="4">4</button>
+      <button class="key" data-value="5">5</button>
+      <button class="key" data-value="6">6</button>
+      <button class="key op" data-value="-">−</button>
+
+      <button class="key" data-value="1">1</button>
+      <button class="key" data-value="2">2</button>
+      <button class="key" data-value="3">3</button>
+      <button class="key op" data-value="+">+</button>
+
+      <!-- Bottom Row -->
+      <button class="key" data-value="0" style="grid-column:span 2;">0</button>
+      <button class="key" data-value=".">.</button>
+      <button class="key equal" data-action="calculate">=</button>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
 </html>
