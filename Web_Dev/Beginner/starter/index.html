@@ -1,15 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+ <head>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Web Challenge</title>
+    <title>Your Name — Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <h1>Welcome to your Beginner Web Dev Challenge!</h1>
-    <marquee behavior="" direction="">Kolawole is cool</marquee>
-    <p>Start your project here.</p>
-    <script src="script.js"></script>
-  </body>
+ </head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner wrap">
+      <div class="brand">Femi-David's <span>Portfolio</span></div>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="mode-toggle" title="Toggle theme">🌙</button>
+        <button id="menu-toggle" title="Menu" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    
+    <section class="hero fade-in" id="home">
+      <div class="hero-left">
+        <h1>Hi — I'm <span class="highlight">Oluwafemi-David</span></h1>
+        <p class="lead">Front-End Developer • Designer • Problem Solver</p>
+        <p>I build high-performing, visually engaging websites that help brands stand out and connect with users.</p>
+        <div class="cta-row">
+          <a href="#contact" class="btn">Hire Me</a>
+          <a href="#projects" class="btn secondary">My Work</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <img src="2cdadb4f1ec9d6e9a98be22dfeadbef1.jpg" alt="My profile photo" class="profile" />
+      </div>
+    </section>
+
+    <section id="about" class="fade-in">
+      <h2 class="section-title">About Me</h2>
+      <div class="card">
+        <p>
+            I’m Oluwafemi-David Abolarinwa, a Computer Science student at Nile University of Nigeria, and a dedicated front-end and back-end developer with a strong background in Python and C programming.
+            <!--make a new line here-->
+            I’m passionate about designing and developing efficient, scalable, and user-focused solutions. My interests span software development, artificial intelligence, and system design, and I constantly seek opportunities to refine my technical expertise through real-world projects and collaboration.
+
+            I’m driven by a commitment to excellence, innovation, and continuous growth—striving to build technology that not only works but inspires.
+        </p>
+      </div>
+    </section>
+
+    <section id="skills" class="fade-in">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill">
+          <h3>HTML5</h3>
+          <p>Semantic, structured markup that forms the foundation of every web page I build.</p>
+        </div>
+        <div class="skill">
+          <h3>CSS3 / Tailwind</h3>
+          <p>Modern, responsive, and elegant designs crafted with precision and style.</p>
+        </div>
+        <div class="skill">
+          <h3>JavaScript (ES6+)</h3>
+          <p>Dynamic interactivity and functionality using clean, modular scripts.</p>
+        </div>
+        <div class="skill">
+          <h3>React</h3>
+          <p>Reusable component-based architecture for seamless user interfaces.</p>
+        </div>
+        <div class="skill">
+          <h3>Node.js</h3>
+          <p>Server-side logic and APIs for complete full-stack development.</p>
+        </div>
+        <div class="skill">
+          <h3>Version Control (Git)</h3>
+          <p>Efficient code management and collaboration using Git and GitHub.</p>
+        </div>
+        <div class="skill">
+            <h3>Python</h3>
+            <p>Proficient in Python for scripting, automation, and data analysis tasks.</p>
+        </div>
+        <div class="skill">
+          <h3>UI / UX Design</h3>
+          <p>User-centered design principles to enhance usability and engagement.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="fade-in">
+      <h2 class="section-title">Projects</h2>
+      <div class="card" style="text-align:center; color:var(--muted)">
+        <p style="font-weight: bold; text-transform: uppercase;">StarBucks Slider Project</p>
+        <p>A responsive Starbucks landing page slider built with HTML, CSS, and JavaScript.</p>
+        <a href="https://github.com/femi123456/Starbucks-Project" target="_blank" class="btn secondary">View Project</a>
+      </div>
+    </section>
+
+    <section id="contact" class="fade-in">
+      <h2 class="section-title">Contact Me</h2>
+      <div class="contact-container">
+        <div class="contact-info card">
+          <p><strong>Let's work together to bring your vision to life.</strong></p>
+          <ul>
+            <li>📧 <a href="mailto:akinpeluoluwafemidavid@gmail.com">akinpeluoluwafemidavid@gmail.com</a></li>
+            <li>💻 <a href="https://github.com/femi123456" target="_blank">github.com/femi123456</a></li>
+            <li>💼 <a href="https://www.linkedin.com/in/akinpelu-oluwafemi-david-a60a5a291/" target="_blank">linkedin.com/in/akinpelu-oluwafemi-david</a></li>
+          </ul>
+        </div>
+
+        <form class="contact-form card" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div class="footer-col">
+        <h4>Oluwafemi-David</h4>
+        <p>Front-End Developer & Designer creating intuitive, responsive, and elegant digital experiences.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Me</h4>
+        <div class="socials">
+          <a href="https://github.com/femi123456" title="GitHub">🐱</a>
+          <a href="https://www.linkedin.com/in/akinpelu-oluwafemi-david-a60a5a291/" title="LinkedIn">💼</a>
+          <a href="https://www.instagram.com/not.femi/?next=%2F" title="Instagram">📷</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> Oluwafemi-David </p>
+    </div>
+  </footer>
+
+  <button id="to-top" title="Go to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
 </html>
