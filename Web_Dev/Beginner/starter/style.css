@@ -3,3 +3,120 @@ body {
   text-align: center;
   margin-top: 50px;
 }
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main .pic img{
+    width: 60%;
+    height: 40%;
+    margin-right: 20%;
+}
+.main .card{
+    color: blue;
+    font-size: 27px;
+    font-weight: bold;
+    margin-left: -10%;
+}
+.info{
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    animation: Hope 1s ease-in-out;
+}
+.info .Ski{
+    width: 50%;
+    padding: 10px 10px;
+    margin-left: 20px;
+    color: green;
+    font-size: 20px;
+}
+.info .Ski .skill{
+    font-size: 25px;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+}
+.info .Bio .about{
+    font-size: 25px;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+}
+.info .Bio{
+    width: 50%;
+    padding: 10px 10px;
+    color: red;
+    font-size: 20px;
+}
+.foot{
+    margin-top: 70px;
+    align-items: center;
+    border: 1px solid black;
+    width: 30%;
+    margin-left: 35%;
+    height: 30%;
+    animation: Hope 1s ease-in-out;
+}
+.foot .colume1{
+    display: flex;
+    justify-content: center;
+}
+.foot .colume1 div{
+    padding: 10px;
+    text-align: center;
+}
+.foot .colume1 div a{
+    animation: colour 6s linear infinite;
+    text-decoration: none;
+}
+.foot .colume2{
+    display: flex;
+    justify-content: center;
+}
+.foot .colume2 div{
+    padding: 10px;
+    text-align: center;
+    margin-right: 50px;
+    margin-left: 30px;
+}
+.foot .colume2 div a{
+    animation: colour 6s linear infinite;
+    text-decoration: none;
+}
+
+@keyframes colour {
+    0%{
+        color: blue;
+    }
+    45%{
+        color: red;
+    }
+    90%{
+        color: green;
+    }
+}
+ @keyframes Hope {
+    0%{
+        opacity: 0;
+        transform: translate(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+@media (min-width: 300px) and (max-width: 600px){
+    .foot{
+        width: 65%;
+        margin-left: 20%;
+    }
+}
+@media (min-width: 601px) and (max-width: 1001px) {
+    .foot{
+        width: 55%;
+        margin-left: 30%;
+    }
+}
