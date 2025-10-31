@@ -103,7 +103,7 @@ body {
   border: 5px solid var(--accent);
   box-shadow: var(--shadow);
 
-  margin-left: 75px;
+  margin-left: px;
 }
 .highlight { 
   color: var(--accent); 
@@ -270,6 +270,12 @@ footer {
   transform: translateY(0);
 }
 
+@media (max-width: 1024px) {
+  .wrap { width: 94%; }
+  .hero { padding: 80px 0; gap: 2rem; }
+  .nav-inner { padding: 12px 0; }
+}
+
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -284,4 +290,32 @@ footer {
   }
   .nav-links.active { display: flex; }
   #menu-toggle { display: block; }
+}
+
+@media (max-width: 480px) {
+  .hero-right img {
+    max-width: 220px;
+    width: 65%;
+  }
+  .brand { font-size: 0.95rem; }
+  .section-title { font-size: 1.4rem; margin-bottom: 1rem; }
+  .skills-grid { gap: 1rem; }
+  .skill { padding: 14px; }
+  .contact-container { gap: 1rem; }
+  .footer-grid { gap: 1rem; padding: 24px 0; }
+  .footer-bottom { padding: 14px 0; }
+
+  #to-top { width: 40px; height: 40px; font-size: 18px; }
+
+  body { font-size: 14px; }
+}
+
+@media (max-width: 360px) {
+  .hero-left h1 { font-size: 1.15rem; }
+  .lead { font-size: 0.95rem; }
+  .btn { padding: 8px 16px; font-size: 0.95rem; }
+  .hero-right img { 
+    max-width: 200px; 
+    margin-left: 53px;
+  }
 }
