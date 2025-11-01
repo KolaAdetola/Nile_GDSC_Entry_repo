@@ -460,7 +460,9 @@ footer p {
 @media (max-width: 768px) {
 
     body{
+        width: 100vh;
         align-items: center;
+        overflow-x: hidden;
     }
     header {
         display: flex;
@@ -517,6 +519,9 @@ footer p {
         padding: 10px;
         margin-top: -220px;
         border-radius: 20px;
+    }
+    .about-square {
+        display: none;
     }
 
     #experience {
@@ -592,5 +597,18 @@ footer p {
     .contact-left-list {
         margin-top: -50px;
         margin-left: -200px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-left{
+        margin-left: 100px;
+    }
+    .hero-right{
+        margin-right: 100px;
+    }
+
+    .about-square {
+        display: none;
     }
 }
