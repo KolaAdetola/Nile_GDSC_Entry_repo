@@ -469,6 +469,10 @@ footer p {
         justify-content: center;
         align-items: center;
     }
+    .navbar{
+        position: fixed;
+        top: 0;
+    }
     .nav-links{
         display: none;
     }
