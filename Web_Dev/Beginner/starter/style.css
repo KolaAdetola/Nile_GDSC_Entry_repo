@@ -262,7 +262,7 @@ header {
     border-radius: 20px;
 }
 
-.projects-cards-each button {
+.projects-cards-each button{
     margin: 20px;
     padding: 10px;
     width: 100px;
@@ -272,6 +272,11 @@ header {
     border: 1px solid white;
     border-radius: 30px;
     cursor: pointer;
+}
+
+.projects-cards-each button a{
+    color: white;
+    text-decoration: none;
 }
 
 #contact {
