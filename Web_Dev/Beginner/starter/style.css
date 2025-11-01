@@ -234,7 +234,7 @@ header {
 
 .projects-cards-each {
     margin-bottom: 20px;
-    padding: 10px;
+    padding: 20px;
     width: 300px;
     border: 1px solid white;
     border-radius: 30px;
@@ -249,7 +249,7 @@ header {
 
 .projects-cards-each h2{
     color: white;
-    padding: 20px;
+    padding: 10px;
     text-transform: uppercase;
 }
 
@@ -260,21 +260,14 @@ header {
     padding: 30px;
     margin: 0;
     border-radius: 20px;
+    font-size: 14px;
 }
 
-.projects-cards-each button{
-    margin: 20px;
-    padding: 10px;
-    width: 100px;
-    background: none;
-    color: white;
-
+.projects-cards-each a{
     border: 1px solid white;
-    border-radius: 30px;
-    cursor: pointer;
-}
-
-.projects-cards-each button a{
+    padding: 9px;
+    margin-bottom: 10px;
+    border-radius: 20px;
     color: white;
     text-decoration: none;
 }
@@ -579,6 +572,11 @@ footer p {
         justify-content: center;
         gap: 0;
     }
+    .projects-cards-each {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
     .projects-cards-each h2 {
         font-size: 1rem;
         margin-top: 5px;
@@ -587,6 +585,9 @@ footer p {
     .projects-cards-each p {
         margin: 0;
         display: none;
+    }
+    .projects-cards-each a {
+        margin-top: 30px;
     }
 
     #contact {
