@@ -4,11 +4,82 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Web Challenge</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css"/>
   </head>
+
   <body>
-    <h1>Welcome to your Beginner Web Dev Challenge!</h1>
-    <p>Start your project here.</p>
-    <script src="script.js"></script>
+    <header>
+      <h1>Kelechi Enyinnia</h1>
+      <nav>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <button id="themeToggle">🌗</button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="intro">
+        <h2>Hello, I'm <span class="accent">Kelechi Enyinnia</span></h2>
+        <p>
+          I’m a beginner web developer passionate about building responsive and
+          creative web experiences.
+        </p>
+        <p><a href="#projects" class="btn">View Projects</a></p>
+      </section>
+
+      <section id="skills">
+        <h3>Skills & Interests</h3>
+        <div class="skills-grid">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span
+          ><span>Git & GitHub</span><span>Responsive Design</span
+          ><span>Python</span>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h3>Projects</h3>
+        <div class="projects-grid">
+          <div class="project">
+            <h4>Project One</h4>
+            <p>
+              A simple website built with HTML & CSS showcasing responsive
+              layouts.
+            </p>
+            <a href="#">Live</a>
+            <a href="#">Code</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h3>Contact Me</h3>
+        <p>
+          Send me a message or email me at
+          <a href="kelechienyinnia@outlook.com">kelechienyinnia@outlook.com</a>
+        </p>
+        <form id="contactForm" novalidate>
+          <input type="text" id="nameField" placeholder="Your Name" required />
+          <input
+            type="email"
+            id="emailField"
+            placeholder="you@example.com"
+            required
+          />
+          <textarea
+            id="messageField"
+            rows="5"
+            placeholder="Your Message..."
+            required
+          ></textarea>
+          <button type="submit" class="btn">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>Built with for Nile GDSC</p>
+    </footer>
+    <div id="toastWrap"></div>
   </body>
 </html>
