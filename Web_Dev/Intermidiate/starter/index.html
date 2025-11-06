@@ -1,14 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Web Challenge</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <h1>Welcome to your Intermediate Web Dev Challenge!</h1>
-    <p>Start your project here.</p>
-    <script src="script.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="calc">
+    <section class="calc-display" aria-live="polite" aria-atomic="true">
+      <div id="screen" class="screen" role="status" aria-live="polite">0</div>
+    </section>
+
+    <nav class="calc-keys" aria-label="Calculator keys">
+      <!-- 1st row -->
+      <button type="button" class="key delete" data-action="delete" aria-label="Delete">⌫</button>
+      <button type="button" class="key clear" data-action="clear" aria-label="Clear">C</button>
+      <button type="button" class="key percent" data-action="percent" aria-label="Percent">%</button>
+      <button type="button" class="key op-key" data-action="operator" data-op="/" aria-label="Divide">÷</button>
+
+      <!-- 2nd row -->
+      <button type="button" class="key" data-action="number" data-value="7">7</button>
+      <button type="button" class="key" data-action="number" data-value="8">8</button>
+      <button type="button" class="key" data-action="number" data-value="9">9</button>
+      <button type="button" class="key op-key" data-action="operator" data-op="*" aria-label="Multiply">×</button>
+
+      <!-- 3rd row -->
+      <button type="button" class="key" data-action="number" data-value="4">4</button>
+      <button type="button" class="key" data-action="number" data-value="5">5</button>
+      <button type="button" class="key" data-action="number" data-value="6">6</button>
+      <button type="button" class="key op-key" data-action="operator" data-op="-" aria-label="Minus">−</button>
+
+      <!-- 4th row -->
+      <button type="button" class="key" data-action="number" data-value="1">1</button>
+      <button type="button" class="key" data-action="number" data-value="2">2</button>
+      <button type="button" class="key" data-action="number" data-value="3">3</button>
+      <button type="button" class="key op-key" data-action="operator" data-op="+" aria-label="Plus">+</button>
+
+      <!-- 5th row -->
+      <button type="button" class="key" data-action="number" data-value="0" aria-label="Zero">0</button>
+      <button type="button" class="key" data-action="decimal" data-value="." aria-label="Decimal">.</button>
+      <button type="button" class="key equals" data-action="equals" aria-label="Equals">=</button>
+    </nav>
+  </main>
+
+  <script src="script.js"></script>
+</body>
 </html>
