@@ -5,10 +5,158 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Web Challenge</title>
     <link rel="stylesheet" href="style.css" />
+     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+          <script src="https://kit.fontawesome.com/1b7412f412.js" crossorigin="anonymous"></script>
+
   </head>
-  <body>
-    <h1>Welcome to your Beginner Web Dev Challenge!</h1>
-    <p>Start your project here.</p>
+
+    <body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="https://github.com/GenialSmileAdam" class="logo">Jason Hughes</a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Jason Hughes</h1>
+            <p>Full Stack Developer </p>
+            <p>I create beautiful, functional websites and applications with a focus on user experience and clean code.</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Skills & Interests</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Frontend Development</h3>
+                    <ul class="skill-list">
+                        <li>HTML5, CSS3, JavaScript</li>
+                        <li>Responsive Web Design</li>
+                        <li>Bootstrap</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-server"></i> Backend Development</h3>
+                    <ul class="skill-list">
+                        <li>Python, Flask</li>
+                        <li>RESTful APIs</li>
+                        <li> MySQL</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> Tools & Others</h3>
+                    <ul class="skill-list">
+                        <li>Git & GitHub</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="assets/The_Archive.png" alt="The Archive blog">
+                    </div>
+                    <div class="project-content">
+                        <h3>Blog Website</h3>
+                        <p>A fully responsive Blog with User Functionality.</p>
+                        <div class="project-tags">
+                            <span>Flask</span>
+                            <span>Bootstrap</span>
+                            <span>Sqlite</span>
+                            <span>REST Api</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/GenialSmileAdam/The-Archive-Blog" class="btn" style="background-color: var(--secondary-color);">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+ 
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>jasonhughes634@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+234 702 610 0616</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Abuja, Nigeria</span>
+                        </div>
+                    </div>
+                    <h3>Follow Me</h3>
+                    <div class="social-links">
+                        <a href="https://github.com/GenialSmileAdam"><i class="fab fa-github"></i></a>
+                        <a href="https://x.com/OG_Jayce"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/rg_jayce?igsh=dmNvaHIzaGx1ZG8w"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Jason Hughes . All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+</body>
     <script src="script.js"></script>
-  </body>
+
 </html>
+
