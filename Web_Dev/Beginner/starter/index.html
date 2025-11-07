@@ -1,14 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Web Challenge</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <h1>Welcome to your Beginner Web Dev Challenge!</h1>
-    <p>Start your project here.</p>
-    <script src="script.js"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div class="logo">Solomon Stephen</div>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hi — I'm Solomon Stephen</h1>
+            <p>I'm a chill and friendly person always ready to learn and try new things. I'm building web projects and sharpening my HTML, CSS and JavaScript skills.</p>
+            <a href="#projects" class="cta-button">See My Work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <picture>
+                <source srcset="assets/profile.jpg" type="image/jpeg">
+                <source srcset="assets/profile.png" type="image/png">
+                <img src="assets/profile.svg" alt="Solomon Stephen" class="profile-pic">
+            </picture>
+            <div class="about-text">
+                <p>I'm a chill and friendly person, always ready to learn and try new things. I'm focused on building small, useful web projects while improving my front‑end skills.</p>
+                <div class="skills">
+                    <h3>My Skills</h3>
+                    <ul>
+                        <li>HTML5</li>
+                        <li>CSS3 / Flexbox & Grid</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>Responsive Design</li>
+                        <li>Git & GitHub</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <picture>
+                    <source srcset="assets/project1.jpg" type="image/jpeg">
+                    <source srcset="assets/project1.png" type="image/png">
+                    <img src="assets/project1.svg" alt="Chill Notes preview" class="project-thumb">
+                </picture>
+                <h3>Chill Notes</h3>
+                <p>A simple note-taking app that stores notes in localStorage so you can quickly save and revisit ideas. Built with vanilla JavaScript and localStorage persistence.</p>
+                <a href="#" class="project-link" target="_blank" rel="noopener">View Demo</a>
+            </div>
+            <div class="project-card">
+                <picture>
+                    <source srcset="assets/project2.jpg" type="image/jpeg">
+                    <source srcset="assets/project2.png" type="image/png">
+                    <img src="assets/project2.svg" alt="Photo Gallery preview" class="project-thumb">
+                </picture>
+                <h3>Photo Gallery</h3>
+                <p>A responsive photo gallery demonstrating CSS Grid and lightbox-style previews. Great for practicing layout and transitions.</p>
+                <a href="#" class="project-link" target="_blank" rel="noopener">View Demo</a>
+            </div>
+            <div class="project-card">
+                <picture>
+                    <source srcset="assets/project3.jpg" type="image/jpeg">
+                    <source srcset="assets/project3.png" type="image/png">
+                    <img src="assets/project3.svg" alt="Task Timer preview" class="project-thumb">
+                </picture>
+                <h3>Task Timer</h3>
+                <p>A small Pomodoro-style timer to help focus during study sessions. Shows how timers and simple state management work in the browser.</p>
+                <a href="#" class="project-link" target="_blank" rel="noopener">View Repo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-content">
+            <p>If you'd like to get in touch, email me at <a href="mailto:solomonstephenuddoka@gmail.com">solomonstephenuddoka@gmail.com</a> or use the form below.</p>
+            <form id="contact-form">
+                <input name="name" type="text" placeholder="Your Name" required>
+                <input name="email" type="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Solomon Stephen. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
 </html>
