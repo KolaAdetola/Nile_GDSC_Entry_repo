@@ -1,14 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Web Challenge</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <h1>Welcome to your Beginner Web Dev Challenge!</h1>
-    <p>Start your project here.</p>
-    <script src="script.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Divine Praise Ikechukwu | Web Developer Portfolio</title>
+  <meta name="description"
+    content="Portfolio of Divine Praise Ikechukwu — Web Developer skilled in front-end and back-end development. View projects, skills, and contact me for collaborations.">
+  <meta name="keywords"
+    content="Divine Praise Ikechukwu, web developer, front-end, back-end, portfolio, HTML, CSS, JavaScript, Nigeria, developer">
+  <meta name="author" content="Divine Praise Ikechukwu">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <img class="imgs" src="_MG_0687.jpg" alt="Profile photo">
+    <h1 class="name">Divine Praise Ikechukwu</h1>
+    <p>Web Developer | Full Time Student | Tech-Enthusiast</p>
+    <button id="mode">🌙</button>
+  </header>
+
+  <!-- About -->
+  <div class=" about fade-in sect">
+    <h2>About Me</h2>
+    <p>Hey there! I'm currently navigating the world of software engineering as a student of Nile University of
+      Nigeria and junior web developer. 🚀 Launching into the tech universe as a full-time software
+      engineering
+      student and passionate web developer, I embrace every opportunity to enhance digital interfaces and to
+      learn
+      in order to create engaging, user-friendly websites and improving online experiences for various
+      clients.
+    </p>
+  </div>
+
+  <!-- Skills -->
+  <div class="skills fade-in sect">
+    <h2>Skills & Interests</h2>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>React</li>
+      <li>Node.js</li>
+      <li>Git & GitHub</li>
+      <li>UI/UX Design</li>
+      <li>Networking</li>
+    </ul>
+  </div>
+
+  <!-- Projects -->
+  <div class="projects fade-in sect">
+    <h2>Projects</h2>
+    <div class="container">
+      <div class="card">
+        <h3>E-commerce Website</h3>
+        <p>HTML • CSS</p>
+        <a href="#">View Website</a>
+      </div>
+      <div class="card">
+        <h3>Gym & Wellness Website</h3>
+        <p>HTML • CSS</p>
+        <a href="#">View Website</a>
+      </div>
+      <div class="card">
+        <h3>Random Color Generator</h3>
+        <p>HTML • CSS • JavaScript</p>
+        <a href="#">View Website</a>
+      </div>
+      <div class="card">
+        <h3>AbujaGlance</h3>
+        <p>HTML • CSS • JavaScript</p>
+        <a href="#">View Website</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="contact fade-in">
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/f/mqawzkjp" method="POST">
+      <div class="formItems">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      </div>
+
+      <div class="formItems">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="formItems">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Your message..." rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Divine Praise Ikechukwu</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
