@@ -1,14 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Web Challenge</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <h1>Welcome to your Beginner Web Dev Challenge!</h1>
-    <p>Start your project here.</p>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- replace the old nav block with this -->
+    <nav>
+        <a href="#Top">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact-me">Contact Me</a>
+
+        <!-- Theme toggle (hidden <input>, visible .slider) -->
+        <label class="theme-toggle" title="Toggle light/dark">
+            <input id="themeToggle" type="checkbox" aria-label="Toggle light mode">
+            <span class="slider" aria-hidden="true"></span>
+        </label>
+    </nav>
+    <br><br><br>
+    <main class="Intro-Container" id="Top">
+        <div class="glow-wrapper" id="glowWrapper">
+            <svg class="glow-svg" id="glowSvg" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+                aria-hidden="true">
+                <defs>
+                    <filter id="glowBlur" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="18" result="b" />
+                        <feMerge>
+                            <feMergeNode in="b" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+                </defs>
+
+                <!-- We'll draw two rects:
+                1) a wide glowing rect (thicker stroke, blurred)
+                2) a core rect (thin stroke) to keep a crisp edge
+            -->
+                <g id="glowGroup">
+                    <rect id="glowRectBlur" class="rect-transition" x="0" y="0" width="100" height="50" rx="18" ry="18"
+                        fill="none" stroke="white" stroke-width="10" filter="url(#gaussGlow)" stroke-opacity="0.9">
+                        <animate attributeName="stroke" values="white;#ff00ff;#00ffc6;white" dur="6s"
+                            repeatCount="indefinite" />
+                        <animate attributeName="stroke-opacity" values="0.0;0.95;0.0" dur="2.5s"
+                            repeatCount="indefinite" />
+                    </rect>
+
+                    <rect id="glowRectCore" x="0" y="0" width="100" height="50" rx="18" ry="18" fill="none"
+                        stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" opacity="0.95">
+                        <!-- color cycle for the core (slower, offset) -->
+                        <animate attributeName="stroke" values="white;#ff00ff;#00ffc6;white" dur="6s"
+                            repeatCount="indefinite" />
+                        <!-- subtle pulse of the core -->
+                        <animate attributeName="opacity" values="0.0;1;0.0" dur="2.5s" repeatCount="indefinite" />
+                    </rect>
+                </g>
+            </svg>
+
+            <!-- content that will be wrapped by the glow -->
+            <div class="glow-box" tabindex="0" id="glowing">Hello there 👋</div>
+        </div>
+
+        <br><br><br>
+
+        <h1>About Me</h1>
+        <p class="Intro">I am Olisakwe George, a second year student
+            at Nile University of Nigeria studying Computer Science.
+            I am passionate about technology and currrently upskilling in
+            web development and machine learning. Feel free to explore my portfolio to see some of my projects
+            and learn more about me!
+        </p>
+
+        <div id="#projects">
+            <h1>Projects</h1>
+            <p>Everything I've worked on so far...</p>
+            <div class="projects-list">
+                <div>Project 1: Personal Website - A responsive portfolio website built using HTML, CSS, and JavaScript.
+                </div>
+                <div>Project 2: To-Do List App - A simple to-do list application with CRUD functionality using React.js.
+                </div>
+                <div>Project 3: Weather App - A weather forecasting app that fetches data from a public API using Python
+                    and Flask.</div>
+            </div>
+        </div>
+
+        <div id="contact-me">
+            <h1>Contact Me</h1>
+            <p>You can get to me through any of the following:</p>
+            <a href="https://wa.me/23408065788377?text=What%27s%20up%21">
+                <img class="small-icons" src="Images/whatsapp.png" alt="WhatsApp Contact" /></a>
+            <a href="https://www.linkedin.com/in/olisakwe-george-chukwuebuka-junior-58281835b/"><img
+                    src="Images/LinkedIn.png" class="small-icons" alt="LinkedIn Account"></a>
+            <a href="https://www.instagram.com/olisakwe_george?igsh=MWVyMm1ud3ZkeDJteQ=="> <img class="small-icons"
+                    src="Images/insta.jpg" alt="My Instagram"></a>
+            <a href="https://x.com/olisakwe24466?t=b20Z_aND6-1Lvc04iJnUJQ&s=09"><img src="Images/x.jpg"
+                    class="small-icons" alt="X Account"></a>
+            <a href="https://github.com/Oli-George"><img src="Images/GitHub.png" class="small-icons"
+                    alt="GitHub Account"></a>
+        </div>
+
+    </main>
+
+    <footer>All rights reserved. Privacy & Terms apply.</footer>
     <script src="script.js"></script>
-  </body>
+</body>
+
 </html>

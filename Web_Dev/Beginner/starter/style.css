@@ -1,5 +1,309 @@
+* {
+    font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+  --pad: 28px;
+  --radius: 18px;
+
+  /* dark theme (defaults) */
+  --bg: rgb(38,37,37);
+  --text: #ffffff;
+  --muted: rgb(170,170,170);
+  --accent: goldenrod;
+  --nav-bg: rgba(0,0,0,0.35);
+  --icon-invert: 0.1; /* small-icons filter in dark */
+}
+
+/* Light theme overrides */
+body.light-theme {
+  --bg: #ffffff;
+  --text: #222222;
+  --muted: #666666;
+  --accent: #b8860b; /* darker gold */
+  --nav-bg: rgba(255,255,255,0.9);
+  --icon-invert: 0; /* don't invert icons on light */
+}
+
+/* apply vars globally */
 body {
-  font-family: Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg);
+  color: var(--text);
+  position: relative; /* make absolute/fixed children positioned relative to the page */
+}
+
+h1 {
+  color: goldenrod;
   text-align: center;
-  margin-top: 50px;
+}
+
+/* nav uses vars so toggle affects it */
+nav {
+  color: goldenrod;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 10px;
+  background: var(--nav-bg);
+  border-radius: 999px;
+  z-index: 9999; /* keep above content */
+}
+
+/* make nav links goldenrod and remove underlines; override any later rules */
+nav a,
+nav a[href],
+nav a:visited {
+  color: goldenrod;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+nav a:hover,
+nav a:focus {
+  color: goldenrod;
+  text-decoration: none;
+  outline: none;
+}
+
+/* make main sit below fixed nav and center the content */
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 140px 20px 20px; /* large top padding so fixed nav doesn't cover content */
+  background: transparent;
+  color: var(--text);
+}
+
+/* glow wrapper: relative container so svg can overlay the box */
+.glow-wrapper {
+  position: relative;
+  display: inline-block;      /* shrink-wrap to the glow-box */
+  padding: 18px;              /* spacing between box and SVG edges */
+  margin-bottom: 28px;
+}
+
+/* overlay SVG covers wrapper area; rects updated by script.js */
+.glow-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* ensure SVG rect strokes use the accent and contrast with theme */
+#glowRectBlur,
+#glowRectCore {
+  stroke: var(--accent);
+}
+
+/* keep the glow-box visible and centered */
+.glow-box {
+  position: relative;
+  z-index: 1;                 /* above the SVG visuals */
+  background: rgba(255,255,255,0.03);
+  padding: 18px 28px;
+  border-radius: 12px;
+  color: var(--text);
+  font-size: 1.6rem;
+  min-width: 220px;
+  text-align: center;
+}
+
+/* ensure SVG glow doesn't block pointer events */
+.glow-svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+
+/* icons: respect theme using CSS variable */
+.small-icons {
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+  filter: invert(var(--icon-invert));
+  transition: filter 0.3s ease;
+  border-radius: 50%;
+}
+
+/* theme toggle switch */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  margin-left: 6px;
+  -webkit-user-select: none;
+}
+.theme-toggle input { display: none; }
+.theme-toggle .slider {
+  width: 64px;
+  height: 34px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 999px;
+  position: relative;
+  transition: background .18s ease, box-shadow .18s ease;
+  padding: 3px;                 /* gives room for the knob */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.28), inset 0 0 0 1px rgba(255,255,255,0.02);
+}
+
+/* decorative sun/moon icon on the track (left by default) */
+.theme-toggle .slider::before {
+  content: "☀️";
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: left .18s ease, right .18s ease, opacity .18s ease, transform .18s ease;
+}
+
+/* the knob */
+.theme-toggle .slider::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 28px;
+  height: 28px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+}
+
+/* checked state: accent background, knob moves right and icon becomes moon on the right */
+.theme-toggle input:checked + .slider {
+  background: var(--accent);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(255,255,255,0.02);
+}
+.theme-toggle input:checked + .slider::after {
+  transform: translateX(30px); /* moves knob to the right */
+  background: #fff;
+}
+.theme-toggle input:checked + .slider::before {
+  content: "🌙";
+  left: auto;
+  right: 8px;
+}
+
+/* focus ring for keyboard users */
+.theme-toggle input:focus + .slider {
+  box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.12), 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* adjust small text color */
+nav a[href] { color: var(--text); }
+.small-icons { filter: invert(.1); }
+
+/* pulsing colors for the Hello box */
+@keyframes pulseColors {
+  0% {
+    transform: translateZ(0) scale(1);
+    box-shadow: 0 12px 40px 8px rgba(64,224,208,0.85), 0 6px 18px rgba(0,0,0,0.35);
+    background: rgba(64,224,208,0.06);
+  }
+  33% {
+    transform: translateZ(0) scale(1.03);
+    box-shadow: 0 14px 48px 10px rgba(255,255,255,0.95), 0 6px 18px rgba(0,0,0,0.28);
+    background: rgba(255,255,255,0.12);
+  }
+  66% {
+    transform: translateZ(0) scale(1.02);
+    box-shadow: 0 12px 40px 8px rgba(255,0,255,0.88), 0 6px 18px rgba(0,0,0,0.32);
+    background: rgba(255,0,255,0.06);
+  }
+  100% {
+    transform: translateZ(0) scale(1);
+    box-shadow: 0 12px 40px 8px rgba(64,224,208,0.85), 0 6px 18px rgba(0,0,0,0.35);
+    background: rgba(64,224,208,0.06);
+  }
+}
+
+/* ensure text color never animates */
+.glow-box {
+  /* ...existing glow-box rules... */
+  color: var(--text) !important;
+  animation: pulseColors 4s ease-in-out infinite;
+  will-change: box-shadow, transform, background;
+}
+
+/* stroke animation for SVG glow rects (if present) */
+@keyframes pulseStroke {
+  0%   { stroke: #40E0D0; opacity: 0.95; }
+  33%  { stroke: #FFFFFF; opacity: 0.95; }
+  66%  { stroke: #FF00FF; opacity: 0.95; }
+  100% { stroke: #40E0D0; opacity: 0.95; }
+}
+
+/* apply animations */
+.glow-box {
+  /* ...existing glow-box rules... */
+  animation: pulseColors 4s ease-in-out infinite;
+  will-change: box-shadow, transform, background, color;
+  transition: border-radius .2s;
+}
+
+/* If your SVG rects exist, animate their stroke color to match the pulse */
+#glowRectBlur,
+#glowRectCore {
+  animation: pulseStroke 4s ease-in-out infinite;
+  /* preserve existing stroke-width/filters set in SVG */
+}
+
+/* dim overlay under nav when scrolling (fully opaque color, visually softened) */
+#navOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 140px;                          /* default height, updated by JS to match nav */
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.92) 0%,
+    rgba(0,0,0,0.88) 40%,
+    rgba(0,0,0,0.80) 100%
+  );                                       /* solid-looking but slightly graduated */
+  mix-blend-mode: multiply;               
+  /* subtle inner shadow to soften the transition without backdrop-filter */
+  box-shadow: inset 0 8px 24px rgba(0,0,0,0.45), inset 0 -6px 18px rgba(0,0,0,0.35);
+  pointer-events: none;                   
+  opacity: 0;
+  transition: opacity .28s ease, background .28s ease;
+  z-index: 9998;                           /* below nav (nav uses 9999) but above page content */
+}
+
+/* lighter visual for light theme (still solid color but softened) */
+body.light-theme #navOverlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.72) 0%,
+    rgba(0,0,0,0.60) 40%,
+    rgba(0,0,0,0.48) 100%
+  );
+  mix-blend-mode: multiply;
+  box-shadow: inset 0 6px 18px rgba(0,0,0,0.28), inset 0 -4px 12px rgba(0,0,0,0.22);
+}
+
+/* toggle visible state (use a slightly reduced opacity so it's less harsh) */
+body.nav-dim #navOverlay {
+  opacity: 0.85; /* visible but a bit less visually harsh than full 1.0 */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: var(--muted);
 }
