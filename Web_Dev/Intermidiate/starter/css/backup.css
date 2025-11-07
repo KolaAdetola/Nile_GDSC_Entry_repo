@@ -1,0 +1,320 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    width: 100%;
+    height: 10vh;
+    /* background: white; */
+    /* box-shadow: 0 0 0.42rem rgba(0, 0, 0, 0.205); */
+    padding: 2%;
+    display: flex;
+    align-items: center;
+}
+
+body{
+    height: 100vh;
+    background: #89a7c613;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+main aside{
+    /* background: white; */
+    width: 20%;
+    height: 100%;
+    padding: 3%;
+    /* border-right:  solid 0.2p x rgba(0, 0, 0, 0.162); */
+}
+
+
+main aside ul{
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+    height: 100%; 
+    visibility: hidden
+}
+
+main aside li{
+/* main aside li{ */
+    list-style: none;
+    
+}
+
+main aside li a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.434);
+}
+
+main aside li a:hover{
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+}
+
+#my_calc{
+    margin: 2%;
+    background: #081C15;
+    height: 100%;
+}
+
+#my_calc_space{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: white; */
+}
+
+#my_calc{
+    border-radius: 0.5rem;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.162);
+    width: 30%;
+    height: 70%;
+    /* transition: all 3s linear; */
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+      transform: translateY(0px);
+    /* opacity: 0.8; */
+    /* filter: blur(1px); */
+}
+50% {
+      transform: translateY(-15px);
+      /* opacity: 1; */
+      /* filter: blur(0); */
+    }
+    100% {
+        transform: translateY(0px);
+    /* opacity: 0.8; */
+    /* filter: blur(1px); */
+}
+}
+/* 
+
+#my_calc:hover{
+    transform: translateY(-10%);
+    animation: none;
+} */
+
+
+@media (max-width: 1000px) {
+    header{
+        display: none;
+    }
+    
+    main aside{
+        position: fixed;
+        bottom: 0;
+        height: 5%;
+        width: 100%;
+    }
+    
+    main aside ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #my_calc{
+    border-radius: 0.32rem;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.162);
+    width: 100%;
+    height: 90%;
+    transition: all 3s linear;
+    animation: float 3s ease-in-out infinite;
+    padding: 3%;
+    transition: none;
+}
+
+
+}
+
+
+
+
+
+#input{
+    background: transparent;
+    margin:  1%;
+    color: #40916C;
+    text-align: center;
+    padding: 2%;
+    width: 100%;
+    height: 20%;
+    font-size: 3vw;
+    outline: none;
+    border: none;
+    border-bottom:  solid 0.22px rgba(255, 255, 255, 0.296);
+    color: white;
+}
+
+#input:focus{
+    outline: none;
+}  
+
+#inner_op{
+    margin: 1%;
+    border: none;
+}
+
+#my_calc .operations{
+    height: 30%;
+    
+}
+
+.full_len{
+    margin: 1%;
+    height: 75%;
+    padding: 3%;
+    /* border: none; */
+    /* border: solid hotpink; */
+    display: flex;
+}
+
+.full_len button{
+border-radius: 100%;
+}
+
+#number-buttons{
+    width: 70%;
+    display: grid;
+    grid-gap: 2%;
+    grid-template-columns:  34% 34% 33%;
+}
+
+#logic{
+    /* justify-content: end; 
+    */
+align-items: end;
+width: 30%;
+display: flex;
+flex-direction: column;
+/* border: solid; */
+grid-gap: 1%;
+}
+
+#logic button{
+    width: 80%;
+    height: 20%;
+}
+
+button{
+    border: none;
+}
+
+.special_keys{
+    background: #1B4332;
+    border: none;
+    color: rgba(255, 255, 255, 0.57);
+}
+
+
+.numerals{
+    border: solid #40916d45 0.2px ;
+    background: transparent;
+    color: white;
+    
+}
+
+
+
+
+
+@media (max-width:1000px) {
+    #my_calc_space{
+        position: fixed;
+        /* top: -2%; */
+        border-radius: 0;
+        height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #my_calc{
+        margin-top: 2;
+    width: 60%;
+    height: 80%;
+    }
+    
+    #logic button, .full_len button{
+        border-radius: 0;
+        /* width: 20vw; */
+        height: 5vw;
+    }
+    
+}
+
+
+
+@media (max-width:700px) {
+    #my_calc{
+        position: fixed;
+        top: -2%;
+        border-radius: 0;
+        height: 100%;
+        width: 100%;
+        animation: none;
+        transition: none;
+    }
+    
+    #number-buttons{
+    height:50% ;
+        grid-gap: 2%;
+    }
+    
+    #logic button, .full_len button{
+        border-radius: 0;
+        /* width: 20vw; */
+        height: 20vw;
+    }
+    
+    
+    
+}
+
+*{
+    transition: all 0.2s linear;
+}
+
+.dark_mode{
+    background-color: #081C15;  
+}
+.dark_mode #my_calc{
+    background: white;
+    color: black;
+}
+
+.dark_mode #my_calc #logic button, .dark_mode #my_calc .full_len button{
+    color: #081C15;
+}
+
+.dark_mode #my_calc .special_keys{
+    background: #1B4332;
+    border: none;
+    color: white !important;
+}
+
+.dark_mode #my_calc input{
+    color: #1B4332;
+}
+
+.dark_mode header h2{
+    color: white;
+}
+
