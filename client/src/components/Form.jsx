@@ -85,7 +85,7 @@ const Form = () => {
             Feedback Form
           </h2>
           <p className="text-blue-100 text-center mt-2">
-            Please fill the form and your honest feedback! Our team will get to you soon.
+            Please fill the form to reach out! Our team will get to you soon.
           </p>
         </div>
 
